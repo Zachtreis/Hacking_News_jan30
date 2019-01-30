@@ -5,3 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+# User.destroy_all
+
+# #Create new cours
+# 10.times do
+#   cour = Cour.create!(title: Faker::GreekPhilosophers.quote)
+# end
+
+
+# #Create new users
+# 30.times do
+#   user = User.create!(cour_id: rand(1..10), first_name: Faker::DragonBall.character, last_name: Faker::Name.last_name)
+# end
+
+#Modif user first_names
+31.times do |index|
+  if index > 0
+    u = User.find(index)
+    u.first_name = Faker::Name.first_name
+    u.save
+  end
+end
